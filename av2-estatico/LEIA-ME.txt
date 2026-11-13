@@ -1,0 +1,118 @@
+LUZ DE CANELA — AV2 DE DESENVOLVIMENTO WEB
+Auditoria: 09/11/2026 (2ª rodada). Entrega estática demonstrativa; pendências em CHECKLIST.txt.
+
+IDENTIFICAÇÃO
+Loja: Luz de Canela (fictícia).
+Segmento: velas natalinas perfumadas e kits para montar velas em casa.
+Turma: PENDENTE — informar a turma real.
+Integrantes (2, informadas pela equipe em 10/11/2026):
+  Alicia Baldin de Souza — Desenvolvedora.
+  Julia Cruz — Desenvolvedora.
+Função: Desenvolvedora, informada pela equipe e exibida na página Sobre.
+Fotos: não serão usadas (decisão da equipe). A página Sobre mostra as iniciais
+de cada nome em um círculo dourado, sem fotografia.
+Número de Alicia: PENDENTE.
+Número de Julia: PENDENTE.
+
+TRÊS LINKS REAIS — DEPENDE DA EQUIPE
+Site no GitHub Pages: [PREENCHER URL REAL APÓS PUBLICAR]
+Repositório público: [PREENCHER URL REAL]
+Vídeo no YouTube: [PREENCHER URL REAL]
+Nenhum desses três links foi fornecido ou confirmado. Não estão publicados por esta entrega.
+
+ABERTURA E PUBLICAÇÃO
+Esta pasta é independente do framework da prévia Lovable.
+Contém HTML5, CSS e JavaScript puros; não precisa instalar, compilar, usar
+servidor ou backend. Abra index.html, produtos.html, kits.html, sobre.html
+ou contato.html diretamente no navegador. Para o GitHub Pages, copie o
+CONTEÚDO desta pasta para a raiz do repositório, deixando index.html na raiz,
+ao lado de css/, js/, img/, audio/ e creditos/. Publique a pasta raiz da
+branch escolhida. Não copie o projeto Lovable, src/, node_modules/ ou public/.
+Os caminhos locais são relativos e foram testados sob /av2-estatico/ em HTTP,
+simulando um site de projeto servido dentro de uma subpasta de repositório.
+Publicação real no GitHub Pages: PENDENTE; o teste local não substitui essa confirmação.
+Fontes Google Fonts e ícones Font Awesome são as únicas dependências externas
+permitidas. Precisam de internet; fontes de sistema substituem as fontes remotas.
+O carrinho é local e pode variar entre URLs file:// conforme o navegador.
+Em HTTP na mesma origem foi confirmado entre páginas e após recarregar.
+Compra e contato são demonstrativos: sem cobrança, envio ou coleta de dados pessoais.
+
+ARQUIVOS
+index.html; produtos.html; kits.html; sobre.html; contato.html
+css/style.css; css/responsivo.css; css/home.css; css/catalogo.css; css/kits.css
+js/produtos.js; js/kits-dados.js; js/combos-dados.js; js/script.js; js/catalogo.js; js/kits.js
+img/; audio/; creditos/; CHECKLIST.txt; fotos-pendentes.md
+Ordem: produtos.js, kits-dados.js, combos-dados.js, script.js; depois catalogo.js ou kits.js
+quando aplicável. Todo JavaScript é externo, sem bibliotecas de componentes.
+
+RECURSOS DE JAVASCRIPT E PÁGINAS
+1. Slideshow automático, anterior/próximo, indicadores e pausa: Início.
+2. Parallax de três camadas com velocidades diferentes ao rolar: Início; respeita movimento reduzido.
+3. Som natalino por clique, tocar/pausar, volume 15%: botão Música de Natal no rodapé das cinco páginas.
+4. Cards gerados pelo array de 100 objetos: Velas.
+5. Busca/família/tamanho combinados e contador imediato: Velas.
+Extras: menu hambúrguer e carrinho nas cinco páginas; validação em Contato;
+modal com carrossel em Velas. Também: abertura do presente por clique,
+Carregar mais em grupos de 12, galerias independentes e swipe nos kits.
+Carrinho: adicionar velas/kits/combos, aumentar/diminuir, remover, total em reais,
+localStorage e compra demonstrativa. Modal: botão/Escape e retorno do foco.
+
+CRÉDITOS VERIFICADOS E LIMITES
+Imagens em img/: produzidas por geração/edição com IA durante este projeto
+no Lovable; não são fotografias de produtos reais. Logo PNG e favicon de
+chama foram recriados para o projeto. Rótulos e algumas marcas foram
+compostos/gerados digitalmente. Não atribuir a bancos de fotos ou fotógrafos.
+Autorização final de uso das imagens/da marca pela equipe: PENDENTE;
+nenhuma licença de imagem além dos termos citados abaixo é presumida.
+Logo: a referência original não chegou; confirmar a versão definitiva com a equipe.
+Tipografia da logo: Cormorant Garamond e Great Vibes (esta última no bitmap).
+Cormorant Garamond: Cormorant Project Authors, SIL OFL 1.1, licença em creditos/.
+Mulish: The Mulish Project Authors, SIL OFL 1.1, licença em creditos/.
+Great Vibes: usada SOMENTE dentro da arte rasterizada da logo (img/logo-luz-de-canela.png,
+"de Canela"); o site não carrega essa fonte. Designer Robert Leuschke; Copyright
+The Great Vibes Pro Project Authors; SIL OFL 1.1, cópia em creditos/greatvibes-license.txt.
+Fontes: https://github.com/google/fonts/blob/main/ofl/greatvibes/OFL.txt e
+https://github.com/google/fonts/blob/main/ofl/greatvibes/METADATA.pb
+O arquivo binário exato usado na renderização não pôde ser rastreado; nenhuma
+licença adicional do binário é declarada.
+Font Awesome Free 6.5.2: Fonticons, Inc.; ícones CC BY 4.0, fontes SIL OFL 1.1,
+código MIT. Licença completa verificada em creditos/fontawesome-license.txt.
+Fontes das licenças verificadas:
+https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.5.2/LICENSE.txt
+https://raw.githubusercontent.com/google/fonts/main/ofl/cormorantgaramond/OFL.txt
+https://raw.githubusercontent.com/google/fonts/main/ofl/mulish/OFL.txt
+
+IMAGENS GERADAS POR IA
+Fotos de velas, kits, combos, cena da Home, presente e ateliê (img/) foram geradas
+ou editadas com as ferramentas de imagem do Lovable durante este projeto.
+Referência: Termos do Lovable, seção "Your Rights" (https://lovable.dev/terms):
+entre o usuário e o Lovable, o usuário detém o AI Output gerado, SUJEITO a eventuais
+direitos de terceiros sobre modelos, dados de treino ou resultados. Isso NÃO torna
+as imagens domínio público e NÃO representa aprovação do professor ou da escola.
+Som: sinos-de-natal.mp3, síntese instrumental original produzida para o projeto,
+sem gravações de terceiros; disponibilizada sob CC0 1.0 nesta entrega.
+Composição: Jingle Bells / The One Horse Open Sleigh, J. L. Pierpont, 1857,
+domínio público por antiguidade. Primeira edição e autor verificados em:
+https://cantorion.org/music/4731/Jingle-Bells-First-edition
+Licença da gravação: https://creativecommons.org/publicdomain/zero/1.0/
+A antiga referência à Library of Congress não foi confirmada e foi substituída.
+
+NOME DO ZIP
+Nome exigido: AV2_DWS_LuzDeCanela_<TURMA REAL>.zip.
+Como a turma não foi informada, AV2_DWS_LuzDeCanela_Turma.zip é apenas
+um pacote PROVISÓRIO (gerado em 09/11/2026); substituir Turma antes da entrega.
+Continuam PENDENTES (equipe): turma real, números das duas integrantes,
+três links e o envio.
+Confira CHECKLIST.txt e fotos-pendentes.md antes de entregar.
+
+CATÁLOGO E FOTOS
+100 velas, todas com foto principal e galeria de 4 fotos (400 arquivos únicos).
+Três combos de velas prontas, fora da contagem de 100, com galerias próprias.
+Preço do conjunto = soma dos preços das velas, sem desconto inventado.
+Estado detalhado em fotos-pendentes.md.
+
+CONTATO DA MARCA
+Telefone fornecido pela equipe: (19) 99930-0918.
+Instagram proposto: @luzdecanela.velas — exibido sem link até a equipe
+confirmar a titularidade do perfil. Nenhum endereço foi informado.
+A foto do ateliê em Contato é ilustrativa, gerada por IA.

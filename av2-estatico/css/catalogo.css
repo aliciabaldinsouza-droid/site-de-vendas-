@@ -1,0 +1,77 @@
+/* Catálogo: filtros, cards e ficha */
+.filtros { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--esp-2); align-items: end; margin-bottom: var(--esp-2); }
+.filtros label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.filtros input, .filtros select { width: 100%; padding: 0.7rem; border: 1px solid var(--cor-dourado); border-radius: var(--raio); background: var(--cor-branco); font: inherit; color: var(--cor-cacau); }
+.contador { font-weight: 600; color: var(--cor-pinheiro); }
+.vazio { text-align: center; padding: var(--esp-4) var(--esp-2); background: var(--cor-branco); border: 1px dashed var(--cor-dourado); border-radius: var(--raio); }
+.centro { text-align: center; margin-top: var(--esp-4); }
+
+.cartao-vela { display: flex; flex-direction: column; }
+.cartao-foto { padding: 0; border: 0; background: none; cursor: pointer; margin-bottom: var(--esp-2); display: block; width: 100%; }
+.cartao-foto img { aspect-ratio: 1 / 1; object-fit: contain; border-radius: var(--raio); width: 100%; }
+.cartao-foto .marcador { margin: 0; aspect-ratio: 1 / 1; }
+.cartao-meta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cor-pinheiro); margin-bottom: 0.3rem; }
+.cartao-vela h3 { margin-bottom: 0.4rem; }
+.link-ficha { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-align: left; }
+h3 .link-ficha:hover { color: var(--cor-cranberry); }
+.cartao-acoes { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: var(--esp-2); }
+.cartao-acoes .link-ficha { color: var(--cor-cranberry); text-decoration: underline; font-weight: 700; }
+
+.ficha { width: min(960px, 100% - 2rem); max-height: calc(100dvh - 2rem); border: 0; border-radius: var(--raio); padding: var(--esp-4) var(--esp-3) var(--esp-3); background: var(--cor-creme); color: var(--cor-cacau); box-shadow: var(--sombra); }
+.ficha::backdrop { background: rgba(53, 40, 34, 0.6); }
+.ficha-fechar { position: absolute; top: 0.5rem; right: 0.5rem; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--cor-dourado); background: var(--cor-branco); cursor: pointer; font-size: 1.1rem; }
+.ficha-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--esp-4); align-items: start; }
+.ficha-carrossel { position: relative; }
+.ficha-janela { overflow: hidden; border-radius: var(--raio); touch-action: pan-y; }
+.ficha-trilho { display: flex; transition: transform 0.45s ease; }
+.ficha-trilho figure { margin: 0; flex: 0 0 100%; }
+.ficha-trilho img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.ficha-seta { position: absolute; top: calc(50% - 40px); width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--cor-branco); color: var(--cor-cacau); cursor: pointer; box-shadow: var(--sombra); }
+.ficha-seta.anterior { left: 0.5rem; }
+.ficha-seta.proxima { right: 0.5rem; }
+.ficha-pontos { display: flex; justify-content: center; gap: 0.6rem; margin-top: var(--esp-2); }
+.ficha-pontos button { width: 14px; height: 14px; padding: 0; border-radius: 50%; border: 1px solid var(--cor-cranberry); background: transparent; cursor: pointer; }
+.ficha-pontos button[aria-current="true"] { background: var(--cor-cranberry); }
+.ficha-posicao { text-align: center; font-size: 0.85rem; color: var(--cor-pinheiro); margin-top: var(--esp-1); }
+.ficha-pendente[hidden], .ficha-carrossel[hidden] { display: none; }
+.ficha-pendente { aspect-ratio: auto; min-height: 260px; padding: var(--esp-3); text-align: center; }
+.ficha .preco { font-family: var(--fonte-titulo); font-size: 1.6rem; color: var(--cor-cranberry); }
+.ficha-detalhe { font-size: 0.9rem; color: var(--cor-pinheiro); }
+@media (prefers-reduced-motion: reduce) { .ficha-trilho { transition: none; } }
+
+.aviso-carrinho { position: fixed; left: 50%; bottom: 1.5rem; transform: translate(-50%, 300%); visibility: hidden; background: var(--cor-cacau); color: var(--cor-creme); padding: 0.8rem 1.4rem; border-radius: var(--raio); margin: 0; z-index: 20; transition: transform 0.3s ease; max-width: calc(100% - 2rem); }
+.aviso-carrinho.visivel { transform: translate(-50%, 0); visibility: visible; }
+
+
+#grade-velas { display: grid; grid-template-columns: minmax(0, 1fr); }
+.cartao-vela { border: 1px solid var(--cor-creme-escuro); border-top: 2px solid var(--cor-dourado); box-shadow: none; }
+.cartao-vela:hover, .cartao-vela:focus-within { border-color: var(--cor-dourado); box-shadow: var(--sombra); }
+.cartao-foto img { transition: transform 0.3s ease; }
+.cartao-foto:hover img, .cartao-foto:focus-visible img { transform: scale(0.97); }
+.cartao-acoes .botao { width: 100%; padding-inline: var(--esp-1); }
+.cartao-acoes .link-ficha { min-height: 2.75rem; }
+.ficha-pendente { overflow-wrap: anywhere; }
+.ficha-grade { gap: var(--esp-3); }
+.ficha-trilho img { object-fit: contain; }
+.ficha-pontos { gap: 0; }
+.ficha-pontos { flex-wrap: wrap; }
+#grade-combos { display: grid; grid-template-columns: minmax(0, 1fr); }
+#grade-combos ul { padding-left: var(--esp-3); margin-bottom: var(--esp-2); }
+.ficha-pontos button { width: 2.75rem; height: 2.75rem; padding: 0; border: 0; background: none; display: grid; place-items: center; }
+.ficha-pontos button::before { content: ""; width: 0.65rem; height: 0.65rem; border: 1px solid var(--cor-cranberry); border-radius: 50%; }
+.ficha-pontos button[aria-current="true"] { background: none; }
+.ficha-pontos button[aria-current="true"]::before { background: var(--cor-cranberry); }
+@media (min-width: 600px) {
+  #grade-velas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #grade-combos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filtros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filtros > div:first-child { grid-column: 1 / -1; }
+}
+@media (min-width: 992px) {
+  #grade-velas { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  #grade-combos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .filtros { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto; }
+  .filtros > div:first-child { grid-column: auto; }
+  .ficha-grade { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .cartao-foto img { transition: none; } }

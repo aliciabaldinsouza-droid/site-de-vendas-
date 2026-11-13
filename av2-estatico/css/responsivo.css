@@ -1,0 +1,27 @@
+/* Mobile-first: celular é a base, telas maiores adicionam colunas. */
+@media (min-width: 600px) {
+  .grade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grade.grade-equipe { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .linha-tempo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rodape .container { flex-direction: row; flex-wrap: wrap; }
+  .marca img { width: 11rem; }
+  .vitrine-slide { grid-template-columns: 10rem minmax(0, 1fr); text-align: left; }
+  .aromas { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 992px) {
+  h1 { font-size: 3.4rem; }
+  h2 { font-size: 2.4rem; }
+  .secao { padding-block: var(--esp-4); }
+  .cabecalho .container { display: flex; gap: var(--esp-2); padding-block: var(--esp-2); }
+  .menu-botao { display: none; }
+  .menu { display: block; position: static; border: 0; margin-left: auto; }
+  .menu ul { flex-direction: row; gap: var(--esp-2); padding: 0; }
+  .marca img { width: 11.5rem; }
+  .grade { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .apresentacao, .contato-grade { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+  .produto-destaque { grid-template-columns: 16rem minmax(0, 1fr); }
+  .linha-tempo { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
