@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de velas natalinas perfumadas Luz de Canela.">
+  <title>Velas | Luz de Canela</title>
+  <meta property="og:title" content="Velas | Luz de Canela">
+  <meta property="og:description" content="Catálogo de velas natalinas perfumadas Luz de Canela.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="img/chama.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+  <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cabecalho">
+    <div class="container">
+      <a class="marca" href="index.html"><img src="img/logo-luz-de-canela.png" width="1218" height="432" alt="Luz de Canela – Velas Perfumadas"></a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal"><i class="fa-solid fa-bars" aria-hidden="true"></i> Menu</button>
+      <nav class="menu" id="menu-principal" aria-label="Menu principal">
+        <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html" aria-current="page">Velas</a></li>
+        <li><a href="kits.html">Monte sua vela</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo">
+<section class="secao">
+  <div class="container">
+    <p class="sobretitulo">Catálogo</p>
+    <h1>Velas perfumadas</h1>
+    <hr class="divisor">
+    <p>100 velas de cera vegetal em cinco famílias de aroma e quatro tamanhos. Os kits para montar em casa ficam numa <a href="kits.html">coleção separada</a>.</p>
+    <p><a class="botao botao-contorno" href="#combos">Combos para presentear</a></p>
+    <div class="produto-destaque">
+      <figure class="vela-bosque">
+        <img src="img/vela-bosque-da-vespera.webp" width="576" height="768" alt="Vela Bosque da Véspera em vidro transparente, cera creme com dois pinheirinhos e uma casinha nevada">
+        <span class="vela-rotulo" aria-hidden="true"><img src="img/logo-luz-de-canela.png" width="1218" height="432" alt=""><span>Bosque da Véspera</span></span>
+      </figure>
+      <div>
+        <p class="sobretitulo">Destaque do Natal</p>
+        <h2>Bosque da Véspera</h2>
+        <p>Pinheiro, cedro e baunilha. Dois pinheirinhos e uma casinha nevada sobre a cera creme.</p>
+        <button class="botao" type="button" data-ficha-slug="bosque-da-vespera">Ver a vela</button>
+        <a class="botao botao-contorno" href="kits.html#kit-bosque-da-vespera">Montar a minha</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="secao secao-alt" aria-labelledby="t-velas">
+  <div class="container">
+    <h2 id="t-velas">Todas as velas</h2>
+    <form class="filtros" id="form-filtros" role="search" aria-label="Filtrar velas">
+      <div><label for="busca">Buscar por nome</label><input id="busca" type="search" placeholder="Ex.: pinheiro" autocomplete="off"></div>
+      <div><label for="filtro-familia">Família de aroma</label>
+        <select id="filtro-familia"><option value="">Todas</option><option>Doces de Natal</option><option>Bosque de Inverno</option><option>Frutas da Ceia</option><option>Especiarias Quentes</option><option>Aromas Suaves</option></select></div>
+      <div><label for="filtro-tamanho">Tamanho</label>
+        <select id="filtro-tamanho"><option value="">Todos</option><option>Mini</option><option>Pequena</option><option>Média</option><option>Grande</option></select></div>
+      <button type="button" class="botao botao-contorno" id="limpar-filtros" hidden>Limpar filtros</button>
+    </form>
+    <p class="contador" id="contador" role="status" aria-live="polite"></p>
+    <div class="grade" id="grade-velas"></div>
+    <p class="vazio" id="vazio" hidden>Nenhuma vela encontrada com essa busca. Tente outro nome ou limpe os filtros.</p>
+    <p class="centro"><button class="botao" type="button" id="carregar-mais">Carregar mais</button></p>
+  </div>
+</section>
+
+<section class="secao" id="combos" aria-labelledby="t-combos">
+  <div class="container">
+    <p class="sobretitulo">Combo de velas prontas</p>
+    <h2 id="t-combos">Combos para presentear</h2>
+    <p>Peças prontas na caixa creme, com papel de seda cranberry. Prefere montar em casa? <a href="kits.html">Kit para montar</a>.</p>
+    <div class="grade" id="grade-combos"></div>
+  </div>
+</section>
+
+<dialog class="ficha" id="ficha" aria-labelledby="ficha-titulo">
+  <button type="button" class="ficha-fechar" aria-label="Fechar ficha"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+  <div class="ficha-grade">
+    <div>
+      <div class="ficha-carrossel" tabindex="0" aria-roledescription="carrossel" aria-label="Fotos da vela. Use as setas do teclado para trocar.">
+        <div class="ficha-janela"><div class="ficha-trilho"></div></div>
+        <button type="button" class="ficha-seta anterior" data-dir="-1" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button type="button" class="ficha-seta proxima" data-dir="1" aria-label="Próxima foto"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <div class="ficha-pontos"></div>
+        <p class="ficha-posicao" aria-live="polite"></p>
+      </div>
+      <div class="ficha-pendente marcador" hidden><p><strong>Galeria em produção.</strong><br>Fotos que faltam: <span></span></p></div>
+    </div>
+    <div>
+      <p class="sobretitulo ficha-meta"></p>
+      <h2 id="ficha-titulo"></h2>
+      <p class="notas ficha-notas"></p>
+      <p class="ficha-descricao"></p>
+      <p class="ficha-detalhe"></p>
+      <p class="preco ficha-preco"></p>
+      <button class="botao ficha-add" type="button" data-add="">Adicionar ao carrinho</button>
+    </div>
+  </div>
+</dialog>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <section>
+        <h2>Luz de Canela</h2>
+        <p>Velas perfumadas e kits para criar em casa. Aromas de Natal para acender à mesa, presentear e guardar na memória.</p>
+      </section>
+      <section>
+        <h2>Navegue</h2>
+        <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Velas</a></li>
+        <li><a href="kits.html">Monte sua vela</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Contato</h2>
+        <ul class="rodape-contatos">
+          <li><a href="tel:+5519999300918"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="rotulo">Telefone:</span> (19) 99930-0918</a></li>
+          <li><span class="instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="rotulo">Instagram:</span> @luzdecanela.velas</span></li>
+        </ul>
+      </section>
+      <div class="rodape-musica">
+        <button class="som-botao" id="som-botao" type="button" aria-pressed="false"><i class="fa-solid fa-music" aria-hidden="true"></i> <span class="som-texto">Música de Natal</span></button>
+        <audio id="som-natal" src="audio/sinos-de-natal.mp3" preload="none" loop></audio>
+        <a class="credito-som" href="audio/creditos.md">Créditos da música</a>
+        <p id="som-status" class="som-status" role="status"></p>
+      </div>
+      <p class="copy">&copy; <span id="ano">2026</span> Luz de Canela. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="js/produtos.js"></script>
+  <script src="js/kits-dados.js"></script>
+  <script src="js/combos-dados.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

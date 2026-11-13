@@ -1,0 +1,99 @@
+CHECKLIST DA AUDITORIA — LUZ DE CANELA — 09/11/2026 (auditoria completa, 2ª rodada)
+Estados: VERIFICADO | PENDENTE | DEPENDE DA EQUIPE
+Testes em Chromium automatizado (Playwright), servido por HTTP em /av2-estatico/
+(simula site de projeto do GitHub Pages em subpasta). Larguras 360, 768 e 1366 px.
+Teste automatizado NÃO equivale a celular real nem a GitHub Pages publicado.
+
+VERIFICADO
+Estrutura e HTML
+- 5 páginas: index (Início), produtos (Velas), kits (Monte sua vela), sobre, contato.
+- lang pt-br, title próprio por página, 1 h1 por página, header/nav/main/footer,
+  favicon de chama, todas as imagens com alt, menu com página atual destacada.
+- 0 caminhos absolutos locais; 0 scripts externos (só CSS de Google Fonts e
+  Font Awesome); nenhum React/TanStack/Tailwind/Bootstrap/jQuery na pasta.
+- Console: 0 erros/avisos; 0 requisições falhas ou HTTP >= 400; 0 imagens
+  quebradas, nas 5 páginas x 3 larguras, após rolar a página inteira.
+- 0 px de rolagem horizontal nas 5 páginas x 3 larguras.
+CSS
+- CSS externo com variáveis :root; Flexbox no menu/rodapé; Grid no catálogo
+  medido em 1 / 2 / 4 colunas (360 / 768 / 1366 px); mobile-first.
+- Animações/transições: abertura da caixa, hover/foco nos cards, transição do
+  carrossel, neve discreta na cena, surgimento da revelação; ::before/::after.
+Home
+- "Que cheiro tem o seu Natal?" dourado sobre a cena; botões visíveis desde o início.
+- Abrir um presente (por teclado): caixa aproxima, tampa sobe, a vela sobe de
+  dentro da caixa. Medido em 360/768/1366 aos 0,8 / 1,6 / 2,4 / 3,4 s: vela
+  (camada 3) entre o fundo da caixa (2) e a parede frontal (4), recortada pela
+  abertura; base permanece atrás da parede frontal no estado final.
+- Revelação com links produtos.html#bosque-da-vespera e kits.html#kit-bosque-da-vespera;
+  fechar e reabrir funcionam. Movimento reduzido: revelação imediata.
+- Vitrine (slideshow): avanço automático medido em 5 s; setas, pontos e pausa
+  funcionam; independente da abertura da caixa.
+- Parallax: 3 camadas com velocidades -0,12 / 0,3 / 0,1; transformações mudam
+  ao rolar (ex.: camada 0,3 de -29,7 px para 90,3 px). Desligado em movimento reduzido.
+- Neve discreta (CSS, decorativa, aria-hidden), parada em movimento reduzido.
+Catálogo
+- 100 IDs únicos; 5 famílias x 20; 4 tamanhos; preços numéricos.
+- 100 capas e 400 fotos 600x600 JPEG (máx. 76 KB), todas únicas por hash,
+  todas com o slug da própria vela no caminho.
+- Busca sem acento ("pao de mel" encontra Pão de Mel); busca vazia mostra aviso;
+  família + tamanho combinados; contador; Carregar mais até 100 (8 cliques).
+- Fichas: 100 de 100 abertas em 1366 px e 12 em 360 e 768 px; todas começam
+  na foto 1 e mostram exatamente as 4 fotos do ID correto, nessa ordem;
+  setas, teclado e gesto de deslizar (toque simulado) avançam.
+- Inspeção visual por prancha: 16 fotos (amostra), incluindo Pão de Mel corrigido
+  (etiqueta "Luz de Canela / Pão de Mel") e Abeto Prateado (2 chamas, 2 pavios).
+Combos e kits
+- Combos Dupla Sob a Árvore (IDs 25, 93), Trio Depois da Ceia (1, 15, 61),
+  Caixa Noite de Dezembro (21, 72, 87): foto de conjunto e ambiente próprias,
+  fotos das velas do combo, preço = soma das velas; ficha abre na foto 1.
+- 4 kits: 16 fotos cada (conjunto, 14 materiais com legenda, Resultado da montagem);
+  legendas iguais aos materiais do cadastro; todas as fotos são do próprio kit.
+Carrinho
+- Vela, combo e kit adicionados; recarregar mantém itens; aumentar, diminuir,
+  remover e total em reais conferidos; compra demonstrativa esvazia o carrinho.
+Contato e rodapé
+- Imagem ilustrativa do ateliê com legenda; sem "imaginário" ou endereço inventado.
+- Telefone (19) 99930-0918 com tel:+5519999300918; @luzdecanela.velas sem link.
+- Formulário: 4 campos validados, formato de e-mail, sucesso demonstrativo;
+  preenchimento e envio por teclado.
+- Rodapé das 5 páginas: nova descrição, telefone, Instagram, botão Música de
+  Natal (toca só por clique, volume 15%, estado tocar/pausar acessível) e
+  link Créditos da música.
+Sobre
+- História, missão, visão, valores e linha do tempo presentes.
+
+CORRIGIDO NESTA RODADA
+- Ficha da vela: as setas do teclado só funcionavam depois de levar o foco ao
+  carrossel; agora funcionam em toda a ficha aberta (exceto campos de texto).
+- Home: não havia neve; adicionada neve discreta e acessível.
+- Ficha por link (#vela): era BUG REAL, não do teste. Ao fechar uma ficha e
+  abrir outra logo em seguida, o fechamento atrasado apagava o link novo
+  (33 falhas em 68 casos no teste de reprodução). Corrigido em js/catalogo.js: só limpa o link que
+  abriu a ficha e ignora fechamento atrasado; link vazio (Voltar) fecha a ficha.
+  Reteste: 100/100 fechar+abrir na prévia em subpasta e 100/100 em file://;
+  troca de link com ficha aberta 30/30; Escape limpa o link; Voltar/Avançar
+  abrem a vela certa; 8 links da Home abrem a vela certa (3 usam nomes antigos
+  aceitos como apelido, de propósito). 0 erros no Console.
+- Pão de Mel (fotos 1, 2, 4) e Abeto Prateado (foto 4) corrigidos.
+
+PENDENTE
+- Publicação real no GitHub Pages e teste em janela anônima e celular real.
+- Autorização de uso da marca/imagens pela equipe. (Great Vibes: OFL 1.1 creditada,
+  binário exato não rastreado; imagens IA: termos Lovable "Your Rights" citados.)
+- Fotos geradas por IA: pequenas diferenças de detalhe entre ângulos podem existir;
+  fidelidade exata das fotos dos kits ao objeto real não é certificável.
+- Funcionamento sem internet (fontes/ícones remotos) não certificado.
+- ZIP provisório AV2_DWS_LuzDeCanela_Turma.zip regenerado em 09/11/2026 (esta versão);
+  renomear com a turma real antes do envio.
+
+DEPENDE DA EQUIPE
+- Turma real e números das duas integrantes. Nomes e função já preenchidos na
+  página Sobre: Alicia Baldin de Souza e Julia Cruz, Desenvolvedoras. Fotos não
+  serão usadas (decisão da equipe; mostra-se apenas as iniciais).
+- Autorização prévia do professor caso o segmento seja classificado como "Outro".
+- Repositório público no GitHub com commits de cada integrante.
+- GitHub Pages publicado; vídeo no YouTube com no mínimo 15 min, todos os
+  integrantes e explicação do código; três links reais no LEIA-ME.
+- Nome final do ZIP com a turma; cronograma e prazo combinados com o professor.
+- Confirmar titularidade do Instagram @luzdecanela.velas antes de criar link.

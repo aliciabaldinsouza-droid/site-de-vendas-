@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kits para montar velas natalinas perfumadas em casa.">
+  <meta property="og:title" content="Monte sua vela | Luz de Canela">
+  <meta property="og:description" content="Quatro kits natalinos com materiais, aromas e instruções para montar sua vela.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Monte sua vela | Luz de Canela</title>
+  <link rel="icon" type="image/svg+xml" href="img/chama.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+  <link rel="stylesheet" href="css/responsivo.css">
+  <link rel="stylesheet" href="css/kits.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cabecalho">
+    <div class="container">
+      <a class="marca" href="index.html"><img src="img/logo-luz-de-canela.png" width="1218" height="432" alt="Luz de Canela – Velas Perfumadas"></a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal"><i class="fa-solid fa-bars" aria-hidden="true"></i> Menu</button>
+      <nav class="menu" id="menu-principal" aria-label="Menu principal">
+        <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Velas</a></li>
+        <li><a href="kits.html" aria-current="page">Monte sua vela</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo">
+<section class="secao kits-abertura">
+  <div class="container">
+    <p class="sobretitulo">Faça em casa</p>
+    <h1>Monte sua vela</h1>
+    <hr class="divisor">
+    <p>Quatro pequenos Natais para montar à mão. Escolha seu aroma e o modelo que vai ganhar vida.</p>
+  </div>
+</section>
+<section class="kits-lista" aria-label="Kits disponíveis">
+  <div class="container" id="lista-kits"></div>
+</section>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <section>
+        <h2>Luz de Canela</h2>
+        <p>Velas perfumadas e kits para criar em casa. Aromas de Natal para acender à mesa, presentear e guardar na memória.</p>
+      </section>
+      <section>
+        <h2>Navegue</h2>
+        <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Velas</a></li>
+        <li><a href="kits.html">Monte sua vela</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Contato</h2>
+        <ul class="rodape-contatos">
+          <li><a href="tel:+5519999300918"><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="rotulo">Telefone:</span> (19) 99930-0918</a></li>
+          <li><span class="instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="rotulo">Instagram:</span> @luzdecanela.velas</span></li>
+        </ul>
+      </section>
+      <div class="rodape-musica">
+        <button class="som-botao" id="som-botao" type="button" aria-pressed="false"><i class="fa-solid fa-music" aria-hidden="true"></i> <span class="som-texto">Música de Natal</span></button>
+        <audio id="som-natal" src="audio/sinos-de-natal.mp3" preload="none" loop></audio>
+        <a class="credito-som" href="audio/creditos.md">Créditos da música</a>
+        <p id="som-status" class="som-status" role="status"></p>
+      </div>
+      <p class="copy">&copy; <span id="ano">2026</span> Luz de Canela. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="js/produtos.js"></script>
+  <script src="js/kits-dados.js"></script>
+  <script src="js/combos-dados.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/kits.js"></script>
+</body>
+</html>
