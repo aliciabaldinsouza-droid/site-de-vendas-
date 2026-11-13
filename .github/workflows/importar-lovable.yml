@@ -1,0 +1,32 @@
+name: Importar Luz de Canela
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Importar a exportação do Lovable
+        shell: bash
+        run: |
+          set -euo pipefail
+          export_dir=$(mktemp -d)
+          curl --fail --location --retry 3 -o "$export_dir/projeto.zip" https://github.com/aliciabaldinsouza-droid/site-de-vendas-/releases/download/av2-lovable/Luz-de-Canela-codigo-completo.zip
+          echo "3a10d19ee9d119bbeaac884255cf90124da64af5948578ac567ceac3c3134112  $export_dir/projeto.zip" | sha256sum -c -
+          unzip -q "$export_dir/projeto.zip" -d "$export_dir/projeto"
+          test -f "$export_dir/projeto/av2-estatico/index.html"
+          cp -a "$export_dir/projeto/." .
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          if ! git diff --cached --quiet; then
+            git commit -m 'Importa todos os arquivos da Luz de Canela'
+            git push origin HEAD:main
+          fi
+          if ! git ls-remote --exit-code --heads origin gh-pages >/dev/null; then
+            site_tree=$(git rev-parse HEAD:av2-estatico)
+            site_commit=$(git commit-tree "$site_tree" -m 'Publica a versão estática da AV2')
+            git push origin "$site_commit:refs/heads/gh-pages"
+          fi
